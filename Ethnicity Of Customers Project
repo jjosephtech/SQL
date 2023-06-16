@@ -1,0 +1,20 @@
+--create a database for all ethnic groups that are customers.
+
+CREATE TABLE ethnicity_of_customers
+
+(id INTEGER PRIMARY KEY,name TEXT, total INTEGER);
+
+INSERT INTO ethnicity_of_customers VALUES(1, "African American", 2200);
+INSERT INTO ethnicity_of_customers VALUES(2, "European American", 3000);
+INSERT INTO ethnicity_of_customers VALUES(3,"Native American", 1900);
+INSERT INTO ethnicity_of_customers VALUES(4, "Latin American", 2000);
+
+--display the database by ethnicity of customers
+
+SELECT * FROM ethnicity_of_customers
+ORDER BY total;
+
+-- what is the average number of native americans to become customers?
+
+SELECT AVG(Native American) "average native american count"
+FROM ethnicity_of_customers;
