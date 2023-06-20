@@ -4,7 +4,6 @@
 
 SELECT COUNT(orderid)
 FROM BIT_DB.JanSales
-WHERE orderid <> '' 
 WHERE length(orderid) = 6 
 AND orderid <> 'OrderID'
 
@@ -26,21 +25,23 @@ WHERE length(orderid) = 6
 AND orderid <> 'OrderID'
 
 #4. Which product was the cheapest one sold in January, and what was the price?
+
 SELECT distinct Product, price
 FROM BIT_DB.JanSales
 WHERE  price in (SELECT min(price) FROM BIT_DB.JanSales)
 
 #5. What is the total revenue for each product sold in January?
+
 SELECT sum(quantity)*price as revenue
 ,product
 FROM BIT_DB.JanSales
 GROUP BY product
 
 #6. Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
-select 
-sum(Quantity), 
-product, 
-sum(quantity)*price as revenue
+SELECT 
+SUM(Quantity), 
+PRODUCT, 
+SUM(quantity)*price as revenue
 FROM BIT_DB.FebSales 
 WHERE location = '548 Lincoln St, Seattle, WA 98101'
 GROUP BY product
