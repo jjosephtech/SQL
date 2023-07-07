@@ -1,7 +1,7 @@
 # For this project, I downloaded Spotify data from Kaggle.
 # Then I created a table to insert Spotify data into.
 # Finally, I performed analytics on the data using SQL. 
-
+ 
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
